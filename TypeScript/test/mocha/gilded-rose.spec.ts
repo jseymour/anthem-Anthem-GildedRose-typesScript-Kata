@@ -51,7 +51,7 @@ describe('Gilded Rose', () => {
     expect(added.sellIn).to.equal(-11);
   });
 
-  it('Conjured Mana Cake should start with quality being 10, decrease to XX on ZZ day and Decrese to XZ on YZ day ', () => {
+  it('Conjured Mana Cake should start with quality being 10, decrease to 5 on 5 day and Decrese to XZ on YZ day ', () => {
     const gildedRose = new GildedRose(data.data);
     let days: number = 20;
     if (process.argv.length > 2) {

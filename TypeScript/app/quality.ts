@@ -52,9 +52,9 @@ export const Conjured = (item) :Item => {
 
   if ( item.quality <0 ){
     item.quality = 0
-  } else {
-    item.sellIn -= 1
   }
+    item.sellIn -= 1
+  
 
   return item
 }
