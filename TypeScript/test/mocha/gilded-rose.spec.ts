@@ -51,7 +51,7 @@ describe('Gilded Rose', () => {
     expect(added.sellIn).to.equal(-11);
   });
 
-  it('Conjured Mana Cake should start with quality being 10, decrease to 5 on 5 day and Decrese to XZ on YZ day ', () => {
+  it('Conjured Mana Cake should start with quality being 10, by day 2 it should be 6 and by day 5 it should be decreased to zero', () => {
     const gildedRose = new GildedRose(data.data);
     let days: number = 20;
     if (process.argv.length > 2) {
@@ -59,14 +59,25 @@ describe('Gilded Rose', () => {
     }
 
     for (let i = 0; i < days; i++) {
-      console.log("-------- day " + i + " --------");
-      console.log("name, sellIn, quality");
       data.data.forEach(element => {
         if (i===0){
           switch (element.name) {
             case 'Conjured Mana Cake': {
+              console.log("-------- day " + i + " --------");
+              console.log("name, sellIn, quality");
               console.log(element.name + ' ' + element.sellIn + ' ' + element.quality);
               expect(element.quality).to.equal(10);
+              break;
+            }
+          }
+        }
+        if (i===2){
+          switch (element.name) {
+            case 'Conjured Mana Cake': {
+              console.log("-------- day " + i + " --------");
+              console.log("name, sellIn, quality");
+              console.log(element.name + ' ' + element.sellIn + ' ' + element.quality);
+              expect(element.quality).to.equal(6);
               break;
             }
           }
@@ -74,6 +85,8 @@ describe('Gilded Rose', () => {
         if (i===5){
           switch (element.name) {
             case 'Conjured Mana Cake': {
+              console.log("-------- day " + i + " --------");
+              console.log("name, sellIn, quality");
               console.log(element.name + ' ' + element.sellIn + ' ' + element.quality);
               expect(element.quality).to.equal(0);
               break;

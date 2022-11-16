@@ -54,7 +54,6 @@ export const Conjured = (item) :Item => {
     item.quality = 0
   }
     item.sellIn -= 1
-  
 
   return item
 }
